@@ -6,7 +6,7 @@ require 'aws/s3'
 require 'parallel_each'
  
 class S3Push < Thor
-  desc "push /Pictures --to-bucket=my-picture-bucket", "push all the files in a directory to s3"
+  desc "push <a-directory> --to-bucket=<bucket-name>", "push all the files in a directory to s3"
   method_option :bucket, :type => :string, :require => true, :aliases => '--to-bucket'
   method_option :file_pattern, :type => :string, :default => '*', :aliases => '--file-pattern'
   def push(directory)
